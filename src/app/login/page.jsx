@@ -5,8 +5,10 @@ import { useRouter } from "next/navigation";
 const page = () => {
         const router = useRouter();
         const [email, setEmail] = useState("");
+        const [name , setName] = useState("");
         const [password, setPassword] = useState("");
         const [error, setError] = useState("");
+
 
         const handleSubmit = async (e) => {
             e.preventDefault();
@@ -16,12 +18,13 @@ const page = () => {
             const res = await fetch("https://jsonplaceholder.typicode.com/users");
             const users = await res.json();
 
-            const userExists = users.some((user) => user.email === email);
+            const userExists = users.some((user) =>(user.email === email && user.name === name));
 
             if (userExists) {
+                localStorage.setItem("username", name);
                 router.push("/dashboard");
             } else {
-                setError("Invalid email or password");
+                setError("Invalid email or name");
             }
             } catch (err) {
             console.error(err);
@@ -39,10 +42,11 @@ const page = () => {
 
         <form onSubmit={handleSubmit} className="w-full space-y-4">
              <div className="w-full mb-4">
-            <label htmlFor="text" className="block text-left pl-2 text-gray-700 font-medium mb-1">
+            <label htmlFor="text" className="block text-left pl-2 text-gray-700 font-medium mb-1"
+            >
              Name
             </label>
-           <input type="text" id="text" placeholder="Ghada Elsayed" className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-blue-500"/>
+           <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} placeholder="Ghada Elsayed" className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-blue-500"/>
           </div>
           <div className="w-full mb-4">
             <label htmlFor="email" className="block text-left pl-2 text-gray-700 font-medium mb-1">

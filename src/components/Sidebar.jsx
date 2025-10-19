@@ -1,10 +1,17 @@
+"use client";
 import React from 'react';
 import { LuLayoutDashboard } from "react-icons/lu";
 import { MdOutlinePeopleAlt } from "react-icons/md";
 import { RiLogoutBoxLine } from "react-icons/ri";
+import { useRouter } from "next/navigation";
 import Link from 'next/link';
 
 const Sidebar = () => {
+     const router = useRouter(); 
+    const logOut =()=> {
+            localStorage.removeItem("username");
+            router.push("/login");
+    }
   return (
     <>
      <aside className="fixed top-0 left-0 h-screen w-64 bg-[#23466bff] text-white shadow-lg flex flex-col justify-between">
@@ -21,7 +28,7 @@ const Sidebar = () => {
       </nav>
 
       <div className="p-4 border-t  border-white">
-        <button className="flex items-center gap-3 hover:text-[#23466bff] w-full text-lg p-2 rounded-lg hover:bg-white transition">
+        <button  onClick={logOut} className="flex items-center gap-3 hover:text-[#23466bff] w-full text-lg p-2 rounded-lg hover:bg-white transition">
          <span> <RiLogoutBoxLine /> </span> <span>Logout</span>
           
         </button>
