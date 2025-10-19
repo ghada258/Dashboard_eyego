@@ -1,40 +1,62 @@
-<<<<<<< HEAD
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Dashboard EyeGo
 
-## Getting Started
+A modern dashboard for managing data and visual analytics built with **Next.js**, **React js**, **Tailwind CSS**, **Redux Toolkit**, and **Recharts**.
+It supports PDF and Excel (XLSX) export for table data and uses React Icons for a rich user interface.
+The application is containerized using **Docker** for easy deployment and environment consistency.
 
-First, run the development server:
 
-```bash
+# Technologies Used
+
+Next.js – Framework for building scalable React apps
+React – UI component-based library
+Tailwind CSS – Utility-first styling
+Redux Toolkit – State management
+Recharts – Data visualization
+React Icons – Icon set for UI components
+jsPDF / autoTable – Generate and export PDF files
+xlsx – Export data to Excel format
+Docker – Containerization for consistent deployment
+
+
+# Features
+Display users and employee data fetched from the JSONPlaceholder API 
+(https://jsonplaceholder.typicode.com/users).
+Simple login system: users can log in only if their name and email exist in the API.
+Data visualization and export (PDF & Excel).
+Fully responsive design with Tailwind CSS.
+State management using Redux Toolkit.
+Containerized with Docker for consistent deployment.
+
+# API Source
+
+This dashboard uses the JSONPlaceholder API (https://jsonplaceholder.typicode.com/users)
+as a mock data source for employees and authentication.
+Only users with existing username and email from this API can successfully log in
+
+# Installation & Setup
+# 1️ Clone the repository
+git clone https://github.com/your-username/dashboard-eyego.git
+cd dashboard-eyego
+
+# 2️ Install dependencies
+npm install
+
+# 3️ Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# Open http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+# Run with Docker
+# Build Docker image
+docker build -t dashboard-eyego .
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Run the container
+docker run -p 3000:3000 dashboard-eyego
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-=======
-# Dashboard_eyego
->>>>>>> 1f8d0e3acc0eb573c399c1c4ad434e8a01c3df11
+## 👩‍💻 Developer
+**Ghada El-Sayed Abou El-Fotouh**  
+Front-End Developer | UI/UX Designer  
+Email: ghadaelsayed20@gmail.com 
+Portfolio: [Behance](https://www.behance.net/ghadaelsayed8)
