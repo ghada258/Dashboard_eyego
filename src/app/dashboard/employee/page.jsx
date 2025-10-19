@@ -88,8 +88,8 @@ const Page = () => {
   if (error) return <img className="w-lg text-center mt-20" src="/error_screen.png" alt="error" />;
 
   return (
- <div className="flex flex-col mt-10">
-    <div className="flex items-center justify-center gap-32">
+ <div className="flex flex-col mt-10 sm:ml-20 lg:ml-0">
+    <div className="flex items-center justify-between ">
          <select onChange={(e) => handleSort(e.target.value)} 
               defaultValue="" className="appearance-none text-center bg-white border border-[#23466b] text-[#23466b] px-4 py-3 rounded-lg cursor-pointer ">
               <option value="" disabled >Sort Data</option>
@@ -97,7 +97,7 @@ const Page = () => {
               <option value="ZTOA"> Z to A</option>
             </select>
 
-            <input type="search" name="search" id="search" placeholder="Search by name ...." className="px-4 py-2  border border-gray-400 rounded-lg w-2xl"  value={searchTerm}
+            <input type="search" name="search" id="search" placeholder="Search by name ...." className="px-4 py-2  border border-gray-400 rounded-lg w-[50%]"  value={searchTerm}
                 onChange={(e) => {setSearchTerm(e.target.value); setCurrentPage(1);}}/>
 
          <select onChange={(e) => {
@@ -114,7 +114,7 @@ const Page = () => {
     </div>
     
       
-    <div className="overflow-x-auto mt-2 rounded-lg">
+    <div className="overflow-x-auto mt-2 rounded-lg ">
       <table className="min-w-full bg-white border border-gray-200 rounded-lg shadow-md">
         <thead className="bg-[#23466b] text-white">
           <tr>

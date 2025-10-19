@@ -33,12 +33,12 @@ const page = () => {
         };
   return (
     <div className="bg-[url('/blue_background.svg')] bg-cover bg-center min-h-screen flex justify-center items-center">
-       <div className='bg-white w-xl rounded-xl flex-col justify-center items-center text-center py-6 px-8'>
+       <div className=' bg-white w-xl  rounded-xl flex-col justify-center items-center text-center py-6 px-8'>
           <div>
             <h1 className='font-bold text-2xl text-[#23466bff]'>Dashboard</h1>
             <p className='text-gray-400'>Sign In To The Dashboard </p>
           </div>
-           <img src="dashboard_login.png" alt="" className='w-35 mt-4 mx-auto' />
+           <img src="dashboard_login.png" alt="login" className='sm:w-20  md:w-40 mt-4 mx-auto' />
 
         <form onSubmit={handleSubmit} className="w-full space-y-4">
              <div className="w-full mb-4">

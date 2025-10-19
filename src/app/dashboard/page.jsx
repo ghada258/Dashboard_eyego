@@ -41,7 +41,7 @@ const page = () => {
 
   return (
     <>
-      <div className="w-full max-w-6xl">
+      <div className="w-full max-w-6xl pl-20 ">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-5">
             <Chart title="Employee Growth" data={employeeData} color="#23466b" />
             <Chart title="Sales Performance" data={salesData} color="#f97316" />
